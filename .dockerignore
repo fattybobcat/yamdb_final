@@ -1,13 +1,10 @@
-.git/*
-env/
-.env/
-.env
 venv/
 .venv
+
 .venv/
 
-__pycache__/
-*.py[cod]
+.env
+.env/
 
 .idea
 .DS_Store
@@ -18,15 +15,12 @@ __pycache__/
 *.sublime-project
 *.sublime-workspace
 
-static/
-
-
-db.sqlite3
-
+.idea
 .nginx
 
 nginx/
-trash/
+
+
 
 docker-compose.yaml
 ssh-key.pub
