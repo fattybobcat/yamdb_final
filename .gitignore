@@ -18,7 +18,12 @@ __pycache__/
 *.sublime-project
 *.sublime-workspace
 
-static/
+api/
+api_yamdb/
+templates/
+trash/
+
+
 
 
 db.sqlite3
