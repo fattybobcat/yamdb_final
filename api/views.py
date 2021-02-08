@@ -3,7 +3,6 @@ import os
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.core.mail import send_mail
 from django.db.models import Avg, OuterRef, Subquery
-from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
@@ -147,7 +146,6 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         titles = get_object_or_404(Title, pk=self.kwargs.get("title_id"))
-        #if Review.objects.filter(author=self.request.user, title_id=title).exists() raise ////#
         serializer.save(author=self.request.user, title_id=titles.id)
 
     def get_queryset(self):

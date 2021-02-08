@@ -151,8 +151,8 @@ AUTH_USER_MODEL = 'api.User'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = os.environ.get('MAIL_SENDER')#'testdjangoyandex1@gmail.com' #os.environ.get('MAIL_SENDER')
-EMAIL_HOST_PASSWORD = os.environ.get('PASSWORD_MAIL_SENDER')#'Testdjangoyandex2020!' #os.environ.get('PASSWORD_MAIL_SENDER')
+EMAIL_HOST_USER = os.environ.get('MAIL_SENDER')
+EMAIL_HOST_PASSWORD = os.environ.get('PASSWORD_MAIL_SENDER')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
