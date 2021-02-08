@@ -18,9 +18,8 @@ __pycache__/
 *.sublime-projectgit
 *.sublime-workspace
 
-api/
-api_yamdb/
-templates/
+
+
 trash/
 
 
