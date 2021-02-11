@@ -64,7 +64,6 @@ jobs:
           username: ${{ secrets.USER_YC }}
           key: ${{ secrets.SSH_KEY_PR }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          
           target: "~/code/"
           script: |
             sudo apt-get update -y
