@@ -57,12 +57,9 @@ jobs:
           username: ${{ secrets.USER_YC }}
           key: ${{ secrets.SSH_KEY_PR }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          #source: "docker-compose.yaml, nginx/default.conf"
-          #target: "~/code"
           source: "docker-compose.yaml,nginx/default.conf,static"
-
           target: "code"
-         # strip_components: 1
+
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
@@ -74,10 +71,12 @@ jobs:
           script: |
             sudo apt-get update -y
             sudo apt-get remove docker docker-engine docker.io -y
-            sudo apt install docker.io -y
+            sudo apt install docker-ce -y
+          #sudo apt install docker.io -y
+          #sudo systemctl enable docker
             sudo systemctl start docker
             sudo systemctl enable docker
-            sudo apt install docker-compose
+          #sudo apt install docker-compose
             sudo docker-compose up
         #sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
         #sudo docker stop $(sudo docker ps -a -q)
