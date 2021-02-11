@@ -59,7 +59,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           #source: "docker-compose.yaml, nginx/default.conf"
           #target: "~/code"
-          source: "docker-compose.yaml"
+          source: "docker-compose.yaml, nginx/default.conf"
 
           target: "code"
          # strip_components: 1
@@ -70,7 +70,7 @@ jobs:
           username: ${{ secrets.USER_YC }}
           key: ${{ secrets.SSH_KEY_PR }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          target: "~/code"
+          target: "code"
           script: |
             sudo apt-get update -y
             sudo apt-get remove docker docker-engine docker.io -y
