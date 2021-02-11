@@ -96,10 +96,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo sh -c "cd code; docker-compose down -v"
-            sudo sh -c "cd code; docker-compose up"
-
-
-    
+            sudo sh -c "cd code; docker-compose up -d"
 
   send_message:
     runs-on: ubuntu-latest
