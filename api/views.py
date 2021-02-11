@@ -129,10 +129,10 @@ class TitleViewSet(viewsets.ModelViewSet):
             rating=Subquery(
                 Title.objects.filter(
                     id=OuterRef("id")
-                    ).annotate(
+                ).annotate(
                     avg_rating=Avg("reviews__score")
-                        ).values("avg_rating")[:1]
-            )
+            ).values("avg_rating")[:1]
+        )
         )
         return queryset
 
