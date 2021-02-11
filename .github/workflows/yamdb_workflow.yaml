@@ -19,10 +19,14 @@ jobs:
         pip install flake8 pytest
         pip install -r requirements.txt
     - name: Lint with flake8
+<<<<<<< HEAD
       run: flake8
+=======
+      run: flake8 --exclude tests/, templates/ .
+>>>>>>> 1706c22b752ea714560d1e5d00c05f03feef8a32
       
       
       
     - name: Test with pytest
-      run: pytest tests.py 
+      run: pytest
       
