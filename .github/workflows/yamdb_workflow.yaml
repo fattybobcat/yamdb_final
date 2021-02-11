@@ -59,10 +59,10 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           #source: "docker-compose.yaml, nginx/default.conf"
           #target: "~/code"
-          source: "*"
+          source: "docker-compose.yaml"
 
-          target: "test"
-          strip_components: 1
+          target: "code"
+         # strip_components: 1
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
