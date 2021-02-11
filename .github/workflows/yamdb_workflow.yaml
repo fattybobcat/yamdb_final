@@ -75,14 +75,10 @@ jobs:
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 8000:8000 ${{ secrets.DOCKER_USERNAME }}/yamdb_final
-<<<<<<< HEAD
-            sudo docker-compose up -d
-        run: docker ps -a
 
-=======
           run: docker ps -a
     
->>>>>>> 1438df9ec678743a4afa0ac5490bb55bd22535ba
+
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
