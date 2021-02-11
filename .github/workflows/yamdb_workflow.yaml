@@ -70,7 +70,6 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           source: "docker-compose.yaml,nginx/default.conf,static,.env"
           target: "code"
-
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
@@ -85,8 +84,6 @@ jobs:
             sudo apt install docker.io docker-compose -y
             sudo systemctl start docker
             sudo systemctl enable docker
-
-
       - name: start docker-compose
         uses: appleboy/ssh-action@master
         with:
