@@ -51,8 +51,8 @@ jobs:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
+          host: ${{ secrets.HOST_YC }}
+          username: ${{ secrets.USER_YC }}
           key: ${{ secrets.SSH_KEY_PR }}
           passphrase: ${{ secrets.PASSPHRASE }}
           source: "docker-compose.yaml, nginx/nginx.conf"
