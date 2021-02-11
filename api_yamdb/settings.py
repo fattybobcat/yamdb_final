@@ -155,7 +155,7 @@ REST_FRAMEWORK = {
             'rest_framework.pagination.PageNumberPagination'
         ],
         'PAGE_SIZE': 30
-    }
+}
 
 AUTH_USER_MODEL = 'api.User'
 
