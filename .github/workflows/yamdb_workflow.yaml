@@ -74,7 +74,6 @@ jobs:
             sudo apt install docker-ce -y
             sudo systemctl start docker
             sudo systemctl enable docker
-            sudo cd code
             sudo docker-compose up
 
     
