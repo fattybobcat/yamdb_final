@@ -131,8 +131,8 @@ class TitleViewSet(viewsets.ModelViewSet):
                     id=OuterRef("id")
                 ).annotate(
                     avg_rating=Avg("reviews__score")
-            ).values("avg_rating")[:1]
-        )
+                ).values("avg_rating")[:1]
+            )
         )
         return queryset
 
