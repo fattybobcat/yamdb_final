@@ -59,7 +59,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           #source: "docker-compose.yaml, nginx/default.conf"
           #target: "~/code"
-          source: "docker-compose.yaml, nginx/default.conf"
+          source: "docker-compose.yaml,nginx/default.conf,static"
 
           target: "code"
          # strip_components: 1
@@ -78,11 +78,12 @@ jobs:
             sudo systemctl start docker
             sudo systemctl enable docker
             sudo apt install docker-compose
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
-            sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 8000:8000 ${{ secrets.DOCKER_USERNAME }}/yamdb_final
+            sudo docker-compose up
+        #sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
+        #sudo docker stop $(sudo docker ps -a -q)
+        #sudo docker run --rm -d -p 8000:8000 ${{ secrets.DOCKER_USERNAME }}/yamdb_final
 
-          run: docker ps -a
+         # run: docker ps -a
     
 
   send_message:
