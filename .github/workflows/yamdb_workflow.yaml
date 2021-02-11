@@ -83,9 +83,8 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           run: |
             cd code
-          script: |
-            sudo docker-compose down -v
-            sudo docker-compose up
+            docker-compose down -v
+            docker-compose up
 
     
 
