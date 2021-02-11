@@ -36,8 +36,8 @@ class IsAuthOnlyCreateOnceOrReadOnly(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
             return True
-        return (request.user.id == obj.author.id or
-                request.user.is_moderator)
+        return (request.user.id == obj.author.id
+                or request.user.is_moderator)
 
 
 class IsAuthorOrModerAdminCrOrReadOnly(permissions.BasePermission):
@@ -50,6 +50,6 @@ class IsAuthorOrModerAdminCrOrReadOnly(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
             return True
-        return (request.user.id == obj.author.id or
-                request.user.is_moderator or
-                request.user.is_admin)
+        return (request.user.id == obj.author.id
+                or request.user.is_moderator
+                or request.user.is_admin)
