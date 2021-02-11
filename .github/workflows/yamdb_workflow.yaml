@@ -63,9 +63,9 @@ jobs:
             sudo apt install docker.io -y
             sudo systemctl start docker
             sudo systemctl enable docker
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 8000:8000 ${{ secrets.DOCKER_USERNAME }}/yamdb_final
+            sudo docker run --rm -d -p 8000:8000 ${{ secrets.DOCKER_USERNAME }}/yamdb
 
   send_message:
     runs-on: ubuntu-latest
