@@ -81,10 +81,9 @@ jobs:
           username: ${{ secrets.USER_YC }}
           key: ${{ secrets.SSH_KEY_PR }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          run: |
-            cd code
-            docker-compose down -v
-            docker-compose up
+          script: |
+            sudo sh -c "cd code; docker-compose down -v, docker-compose up"
+
 
     
 
