@@ -74,6 +74,19 @@ jobs:
             sudo apt install docker.io docker-compose -y
             sudo systemctl start docker
             sudo systemctl enable docker
+      - name: create .env file
+        run: |
+          cd code
+          touch .env
+          echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
+          echo DB_NAME=${{ secrets.DB_NAME }} >> .env
+          echo POSTGRES_USER=${{ secrets.DEV_PASSWORD }} >> .env
+          echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
+          echo DB_HOST=${{ secrets.DB_HOST }} >> .env
+          echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+          echo MAIL_SENDER=${{ secrets.MAIL_SENDER }} >> .env
+          echo PASSWORD_MAIL_SENDER=${{ secrets.PASSWORD_MAIL_SENDER }} >> .env
+
       - name: start docker-compose
         uses: appleboy/ssh-action@master
         with:
